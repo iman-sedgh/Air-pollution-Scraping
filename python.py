@@ -1,16 +1,17 @@
-from requests import get
-from bs4 import BeautifulSoup
+class airquality:
 
-url = "https://airnow.tehran.ir/"
-response = get(url)
-#print(response.text)
-html_soup = BeautifulSoup(response.text , 'html.parser')
-data = html_soup.findAll('span',attrs={"id":"ContentPlaceHolder1_lblAqi3h"})
-#print (data)
-data2 = str ( data[0] )
-start =str ( data2 [ int ( data2.index(">") )  +1 : ] )
-#print (start)
-final = str ( start [:start.index("<")])
-print (final) 
-#start = start [1:data.index("<")]
-#print  (start 
+    def __init__(self,dataurl="https://airnow.tehran.ir/"):
+        self.url= dataurl
+                
+    
+    def getairquality(self):
+        from requests import get
+        from bs4 import BeautifulSoup
+        response = get(self.url)
+        #print ("geting URL")
+     
+        html_soup = BeautifulSoup(response.text , 'html.parser')
+        data = html_soup.find('span',attrs={"id":"ContentPlaceHolder1_lblAqi3h"})
+        data = data.text
+        return data 
+#print airquality.getairquality()
