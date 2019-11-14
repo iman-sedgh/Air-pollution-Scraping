@@ -1,0 +1,22 @@
+import python
+from telegram.ext import Updater, CommandHandler
+updater = Updater('931989944:AAGpaQSgW3KQHKnGll2gJKdGKXiywVPonNI', use_context=True)
+quality = python.airquality()
+def start_method(bot, update):
+    bot.message.reply_text("Welcome to Our Bot. Developer :  @Iman_Sedgh  ")
+    bot.message.reply_text("To Get Air Quality Use /Get")
+    print ('new message')
+
+def get_method(bot,update):
+    print('get method')
+    index = quality.getairquality()
+    print(index)
+    bot.message.reply_text("شاخص آلودگی هوای شهر تهران در حال حاضر {}".format(index))
+start_command = CommandHandler('start', start_method)
+updater.dispatcher.add_handler(start_command)
+updater.dispatcher.add_handler(CommandHandler('Get',get_method))
+
+updater.start_polling()
+
+
+updater.idle()
