@@ -9,6 +9,7 @@ def start_method(bot, update):
 
 def get_method(bot,update):
     print('get method')
+    bot.message.reply_text("Getting Index From {}".format(quality.url))
     index = quality.getairquality()
     print(index)
     bot.message.reply_text("شاخص آلودگی هوای شهر تهران در حال حاضر {}".format(index))
