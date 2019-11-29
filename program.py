@@ -1,6 +1,6 @@
 import python
 from telegram.ext import Updater, CommandHandler
-token = '931989944:AAGpaQSgW3KQHKnGll2gJKdGKXiywVPonNI'
+token = ''
 updater = Updater(token, use_context=True)
 quality = python.airquality()
 def start_method(bot, update):
