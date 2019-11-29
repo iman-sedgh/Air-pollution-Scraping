@@ -1,7 +1,8 @@
 import python
 from telegram.ext import Updater, CommandHandler
-updater = Updater('', use_context=True,base_url="https://tapi.bale.ai/")
-quality = python.airquality()
+token = '931989944:AAGpaQSgW3KQHKnGll2gJKdGKXiywVPonNI'
+updater = Updater(token, use_context=True)
+quality = python.airquality(
 def start_method(bot, update):
     bot.message.reply_text("Welcome to Our Bot.\n Developer :  @Iman_Sedgh  \n This is a Free Python Script Using BS4 and Python-telegram-bot modules \n Github : https://github.com/iman-sedgh/Air-pollution-Scraping ")
     bot.message.reply_text("To Get Air Quality Use /Get")
