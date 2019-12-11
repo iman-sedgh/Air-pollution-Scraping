@@ -1,4 +1,4 @@
-import python
+import scraper
 from telegram.ext import Updater, CommandHandler
 token = '931989944:AAGpaQSgW3KQHKnGll2gJKdGKXiywVPonNI'
 updater = Updater(token, use_context=True)
