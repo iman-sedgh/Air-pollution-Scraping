@@ -29,8 +29,8 @@ def get_method(bot,update):
 def inline_feature(bot,update):
     query = bot.inline_query.query
     results = []
-    results.append(InlineQueryResultArticle(id = uuid4(),title="English",input_message_content = InputTextMessageContent("Air Quality Index Of Tehran Is {}".format("English"+str(query)))))
-    results.append(InlineQueryResultArticle(id = uuid4(),title="Persian",input_message_content = InputTextMessageContent("شاخص آلودگی هوای تهران در حال حاظر {}".format("persian"+str(query)))))
+    results.append(InlineQueryResultArticle(id = uuid4(),title="English",input_message_content = InputTextMessageContent("Air Quality Index Of Tehran Is {}".format("English"+str(quality.getairquality())))))
+    results.append(InlineQueryResultArticle(id = uuid4(),title="Persian",input_message_content = InputTextMessageContent("شاخص آلودگی هوای تهران در حال حاظر {}".format("persian"+str(quality.getairquality())))))
     bot.inline_query.answer(results)
 
 
