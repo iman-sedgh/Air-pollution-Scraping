@@ -10,8 +10,8 @@ from telegram import InlineQueryResultArticle
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-#token = '931989944:AAGpaQSgW3KQHKnGll2gJKdGKXiywVPonNI'
-token = '422767920:AAEZVBVBYoCrWu4Pula_eccUiYDcn5FPCq0'
+token = '931989944:AAGpaQSgW3KQHKnGll2gJKdGKXiywVPonNI' #air quality
+#token = '422767920:AAEZVBVBYoCrWu4Pula_eccUiYDcn5FPCq0' #iman iot prj bot
 
 updater = Updater(token, use_context=True)
 quality = scraper.airquality()
