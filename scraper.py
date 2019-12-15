@@ -13,7 +13,7 @@ class airquality:
             tmpdata = html_soup.find('span',attrs={"id":"ContentPlaceHolder1_lblAqi3h"})
             self.data.append(tmpdata.text)
             print('exiting thread func')
-            time.sleep(60)
+            time.sleep(300)
 
     def getairquality(self):
         return self.data[-1]
