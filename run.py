@@ -30,7 +30,7 @@ def inline_feature(bot,update):
     query = bot.inline_query.query
     results = []
     results.append(InlineQueryResultArticle(id = uuid4(),title="English",input_message_content = InputTextMessageContent("Air Quality Index Of Tehran Is {}".format(str(quality.getairquality())))))
-    results.append(InlineQueryResultArticle(id = uuid4(),title="Persian",input_message_content = InputTextMessageContent("شاخص آلودگی هوای تهران در حال حاظر {}".format(str(quality.getairquality())))))
+    results.append(InlineQueryResultArticle(id = uuid4(),title="Persian",input_message_content = InputTextMessageContent("شاخص آلودگی هوای تهران در حال حاضر {}".format(str(quality.getairquality())))))
     results.append(InlineQueryResultArticle(id = uuid4(),title="Custom Text",input_message_content = InputTextMessageContent(query.format((quality.getairquality())))))
     bot.inline_query.answer(results)
 
