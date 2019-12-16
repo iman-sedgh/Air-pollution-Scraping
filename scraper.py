@@ -7,8 +7,13 @@ class airquality:
         while (1):
             import time
             from requests import get
+            import requests
             from bs4 import BeautifulSoup
-            response = get(self.url)
+            try:
+                response = get(self.url, timeout=60)
+            except requests.exceptions.Timeout as e:
+                print ('excepted')
+            
             html_soup = BeautifulSoup(response.text , 'html.parser')
             tmpdata = html_soup.find('span',attrs={"id":"ContentPlaceHolder1_lblAqi3h"})
             self.data.append(tmpdata.text)
