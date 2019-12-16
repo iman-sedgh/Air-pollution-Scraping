@@ -1,6 +1,6 @@
 class airquality:
     data = []
-    def __init__(self,dataurl="https://airnow.tehran.ir/"):
+    def __init__(self,dataurl="http://airnow.tehran.ir/"):
         self.url= dataurl
                 
     def threadfunc(self):
