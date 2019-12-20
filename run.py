@@ -31,7 +31,10 @@ def inline_feature(bot,update):
     results = []
     results.append(InlineQueryResultArticle(id = uuid4(),title="English",input_message_content = InputTextMessageContent("Air Quality Index Of Tehran Is {}".format(str(quality.getairquality())))))
     results.append(InlineQueryResultArticle(id = uuid4(),title="Persian",input_message_content = InputTextMessageContent("شاخص آلودگی هوای تهران در حال حاضر {}".format(str(quality.getairquality())))))
-    results.append(InlineQueryResultArticle(id = uuid4(),title="Custom Text",input_message_content = InputTextMessageContent(query.format((quality.getairquality())))))
+    if query.find('{}') != -1:
+        results.append(InlineQueryResultArticle(id = uuid4(),title="Custom Text",input_message_content = InputTextMessageContent(query.format(("<b>" +quality.getairquality() + "</b>")),parse_mode='HTML')))
+    else :
+        results.append(InlineQueryResultArticle(id = uuid4(),title="Custom Text",description='*Error !!!*' ,input_message_content = InputTextMessageContent ("* Error \n {} Not Found !!*",parse_mode='Markdown')))
     bot.inline_query.answer(results)
 
 
