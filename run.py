@@ -21,7 +21,7 @@ def start_method(bot, update):
     print ('new message')
 def get_method(bot,update):
     print('get method')
-    bot.message.reply_text('به دلیل مشکلات پیش آمده از سوی airnow.tehran.ir اطلاعات از سایت دیگری دریافت می شود')
+    #bot.message.reply_text('به دلیل مشکلات پیش آمده از سوی airnow.tehran.ir اطلاعات از سایت دیگری دریافت می شود')
     bot.message.reply_text("Getting Index From {}".format(quality.url),disable_web_page_preview= True)
     index = quality.getairquality()
     print(index)
