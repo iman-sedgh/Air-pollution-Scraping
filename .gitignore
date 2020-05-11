@@ -1,6 +1,9 @@
+.gitignore
  __pycache__/ 
 test.py
 .vscode/
 __pycache__/
 venv/
 .gitignore
+.venv/
+.fandogh/
